@@ -4,12 +4,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: chomamateusz/sandbox:docker-node-example
+      tag: chomamateusz/sandbox:0.0.${CICD_PIPELINE_ID}
       pushRemote: true
       registry: index.docker.io
-- name: redeploy
-  steps:
-  - applyYamlConfig:
-      path: ./deployment.yaml
 timeout: 60
+branch: {}
 notification: {}
