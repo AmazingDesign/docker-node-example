@@ -4,7 +4,7 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: chomamateusz/sandbox:0.0.${CICD_PIPELINE_ID}
+      tag: chomamateusz/sandbox:0.0.${CICD_EXECUTION_SEQUENCE}
       pushRemote: true
       registry: index.docker.io
 timeout: 60
