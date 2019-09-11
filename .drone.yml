@@ -1,0 +1,18 @@
+---
+kind: pipeline
+type: docker
+
+trigger:
+  event:
+  - tag
+  branch:
+  - master
+
+steps:
+- name: docker  
+  image: plugins/docker
+  settings:
+    repo: harbor.amazingdesign.eu/sandbox/app-2
+    auto_tag: true
+    username: ${harbor_username}
+    password: ${harbor_password}
