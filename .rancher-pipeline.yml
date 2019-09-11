@@ -2,11 +2,15 @@ stages:
 - name: build
   steps:
   - publishImageConfig:
-      dockerfilePath: ./Dockerfile
-      buildContext: .
-      tag: chomamateusz/sandbox:0.0.${CICD_EXECUTION_SEQUENCE}
+      dockerfilePath: ./app-2/Dockerfile
+      buildContext: ./app-2
+      tag: harbor.amazingdesign.eu/sandbox/app-2:${CICD_GIT_TAG}
       pushRemote: true
       registry: index.docker.io
+    when:
+      event:
+        include:
+        - tag
 timeout: 60
 branch: {}
 notification: {}
