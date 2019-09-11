@@ -10,6 +10,8 @@ steps:
 - name: docker
   image: plugins/docker
   settings:
+    context: ./app-2
+    dockerfile: ./app-2/Dockerfile
     auto_tag: true
     password: "${harbor_password}"
     repo: harbor.amazingdesign.eu/sandbox/app-2
